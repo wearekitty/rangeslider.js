@@ -315,7 +315,7 @@
     };
 
     Plugin.prototype.handleDown = function(e) {
-        e.preventDefault();
+        // e.preventDefault();
 
         // Only respond to mouse main button clicks (usually the left button)
         if (e.button && e.button !== 0) { return; }
@@ -345,14 +345,14 @@
     };
 
     Plugin.prototype.handleMove = function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         var pos = this.getRelativePosition(e);
         var setPos = (this.orientation === 'vertical') ? (this.maxHandlePos - (pos - this.grabPos)) : (pos - this.grabPos);
         this.setPosition(setPos);
     };
 
     Plugin.prototype.handleEnd = function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         this.$document.off(this.moveEvent, this.handleMove);
         this.$document.off(this.endEvent, this.handleEnd);
 
